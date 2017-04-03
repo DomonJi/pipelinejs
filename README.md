@@ -25,12 +25,12 @@ ppl1.length // 2
 ppl1[0] // [Function]
 
 // you can use push pop shift unshift and any other array method
-let ppl2 = ppl1.push(square) 
-ppl2([2,3,4]) // 36
+ppl1.push(square) 
+ppl1([2,3,4]) // 36
 
 // you can combine two pipeline
-let ppl3 = Pipeline(inc,square)
-let ppl4 = Pipeline(ppl1,ppl3)
-ppl4([1,2,3]) // 49
+let ppl2 = Pipeline(inc,square)
+let ppl3 = Pipeline(ppl1,ppl2)
+ppl3([1,2,3]) // 49
 ```
 
