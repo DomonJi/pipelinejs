@@ -73,16 +73,12 @@
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Pipeline;
-function Pipeline() {
-  for (var _len = arguments.length, functions = Array(_len), _key = 0; _key < _len; _key++) {
-    functions[_key] = arguments[_key];
+module.exports = function Pipeline() {
+  for (var _len = arguments.length, fns = Array(_len), _key = 0; _key < _len; _key++) {
+    fns[_key] = arguments[_key];
   }
 
-  var chain = Array.from(functions, function (fn) {
+  var chain = Array.from(fns, function (fn) {
     return typeof fn === 'function' ? fn : function (_) {
       return fn;
     };
@@ -92,15 +88,12 @@ function Pipeline() {
       return f2(f1);
     }, arg);
   };
-  fn.chain = chain;
-  fn.valueOf = fn;
-  return new Proxy(fn, {
+  return typeof fns[0] === 'function' ? new Proxy(fn, {
     get: function get(target, key) {
-      if (key in fn && key !== 'length') return fn[key];
       return typeof chain[key] === 'function' ? chain[key].bind(chain) : chain[key];
     }
-  });
-}
+  }) : fn();
+};
 
 /***/ })
 /******/ ]);
