@@ -1,0 +1,35 @@
+{
+  "name": "pipelinejs",
+  "version": "0.0.1",
+  "description": "A simple pipeline implementation for javascript.",
+  "main": "/dist/index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domonji/pipelinejs.git"
+  },
+  "keywords": [
+    "pipeline"
+  ],
+  "author": "Domon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Domonji/pipelinejs/issues"
+  },
+  "homepage": "https://github.com/Domonji/pipelinejs#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-power-assert": "^1.0.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "mocha": "^3.2.0",
+    "power-assert": "^1.4.2",
+    "webpack": "^2.3.2"
+  }
+}
