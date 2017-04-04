@@ -3,20 +3,20 @@
  */
 
 const {resolve} = require('path')
-const webpack = require('webpack')
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: resolve(__dirname,'dist'),
+    path: resolve(__dirname, 'dist'),
     filename: 'index.js'
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
-        test:/\.js$/,
-        use:['babel-loader'],
-        exclude:/node_modules/
+        test: /\.js$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/,
+        include: resolve(__dirname,'src')
       }
     ]
   }

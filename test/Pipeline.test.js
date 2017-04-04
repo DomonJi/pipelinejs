@@ -2,7 +2,7 @@
  * Created by Domon on 17/4/3.
  */
 
-const Pipeline = require('../src')
+import Pipeline from '../dist'
 import assert from 'power-assert'
 
 describe('Pipeline', function () {

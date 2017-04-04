@@ -1,6 +1,6 @@
 {
   "name": "pipelinejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple pipeline implementation for javascript.",
   "main": "/dist/index.js",
   "scripts": {
